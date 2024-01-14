@@ -9,11 +9,13 @@ const [artist,setArtist] = useState('')
 const addSong = async (e) =>{
     e.preventDefault()
     try{
-        const res = await axios.post('http://localhost:3001/addSong/',{
+        const res = await axios.post('https://tunetrackerserver.cyclic.app/addSong/',{
             title:title,
             artist:artist
         })
         newSong(res.data);
+        setArtist("")
+        setTitle("")
     }catch(err){
         console.log(err);
     }

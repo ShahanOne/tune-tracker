@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Artist = () => {
   const path = usePathname();
   const artist = path.split('/').pop();
+  const artistName = artist.split('/').pop().replace(/%20/g, ' ');
   const [artistSongs, setArtistSongs] = useState([]);
 
   const getArtistSongs = async () => {
@@ -25,7 +26,7 @@ const Artist = () => {
   console.log(artistSongs);
   return (
     <div className="p-8 pb-40 bg-gradient-to-r from-pink-400 to-violet-400">
-      {artistSongs && <ViewArtist name={artist} songs={artistSongs} />}
+      {artistSongs && <ViewArtist name={artistName} songs={artistSongs} />}
     </div>
   );
 };
