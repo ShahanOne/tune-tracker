@@ -1,12 +1,13 @@
+'use client';
 import ViewArtist from '@/components/ViewArtist';
 import axios from 'axios';
-import { useRouter } from 'next/router';
+import { useRouter, usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const Artist = () => {
-  const router = useRouter();
-  const { artist } = router.query;
-  const [artistSongs, setArtistSongs] = useState();
+  const path = usePathname();
+  const artist = path.split('/').pop();
+  const [artistSongs, setArtistSongs] = useState([]);
 
   const getArtistSongs = async () => {
     try {
@@ -21,9 +22,10 @@ const Artist = () => {
   useEffect(() => {
     getArtistSongs();
   }, []);
+  console.log(artistSongs);
   return (
     <div className="p-8">
-      <ViewArtist name={artist} songs={artistSongs} />
+      {artistSongs && <ViewArtist name={artist} songs={artistSongs} />}
     </div>
   );
 };

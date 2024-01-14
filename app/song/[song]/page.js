@@ -1,10 +1,11 @@
+'use client';
 import ViewSong from '@/components/ViewSong';
 import axios from 'axios';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 const Song = () => {
-  const router = useRouter();
-  const { song } = router.query;
+  const path = usePathname();
+  const song = path.split('/').pop();
 
   const [songData, setSongData] = useState();
 
