@@ -10,7 +10,7 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get('http://localhost:3001/getSongs');
+      const res = await axios.get('https://tunetrackerserver.cyclic.app/getSongs');
       setSongs(res.data);
     } catch (err) {
       console.log(err);

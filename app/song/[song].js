@@ -10,7 +10,9 @@ const Song = () => {
 
   const getSongData = async () => {
     try {
-      const res = await axios.get(`http://localhost:3001/getSongData/${song}`);
+      const res = await axios.get(
+        `https://tunetrackerserver.cyclic.app/getSongData/${song}`
+      );
       setSongData(res.data);
     } catch (err) {
       console.error(err);

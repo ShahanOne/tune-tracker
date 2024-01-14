@@ -11,7 +11,7 @@ const Artist = () => {
   const getArtistSongs = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3001/getArtistSongs/${artist}`
+        `https://tunetrackerserver.cyclic.app/getArtistSongs/${artist}`
       );
       setArtistSongs(res.data);
     } catch (err) {
