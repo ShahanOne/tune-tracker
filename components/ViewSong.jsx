@@ -6,7 +6,7 @@ const ViewSong = ({title,artist}) => {
         <img src='/music.jpg' alt='poster' className='w-[26rem]'/>
         <div className=''>
 <p className='text-black text-xl'>{title}</p>
-<p className='text-black'>{artist}</p>
+<p className='text-black'>Artist: {artist}</p>
         </div>
     </div>
   )

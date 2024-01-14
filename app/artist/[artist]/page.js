@@ -24,7 +24,7 @@ const Artist = () => {
   }, []);
   console.log(artistSongs);
   return (
-    <div className="p-8">
+    <div className="p-8 pb-40 bg-gradient-to-r from-pink-400 to-violet-400">
       {artistSongs && <ViewArtist name={artist} songs={artistSongs} />}
     </div>
   );

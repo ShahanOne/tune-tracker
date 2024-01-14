@@ -7,6 +7,8 @@ const ViewArtist = ({name,songs}) => {
         <img src='/music.jpg' alt='poster' className='w-[26rem]'/>
         <div className=''>
 <p className='text-xl text-black'>{name}</p>
+<p className='text-lg text-black'>Songs</p>
+
 {songs?.map((song,index)=><p key={index}  className='block text-black'>{song.title}</p>)}
         </div>
     </div>

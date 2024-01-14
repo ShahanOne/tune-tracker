@@ -26,10 +26,10 @@ setSongs([...songs,newSong])
   }
 
   return (
-    <div className="">
-      <button className='bg-violet-500' onClick={()=> setAddNew(value => !value)}>Add Song</button>
+    <div className="px-24 py-12 bg-gradient-to-r from-pink-400 to-violet-400">
+      <button className='bg-violet-500 text-white rounded p-2' onClick={()=> setAddNew(value => !value)}>Add Song</button>
       {addNew && <AddSong newSong={addNewSong}/>}
-      <div className='grid grid-cols-4 gap-2'>
+      <div className='grid grid-cols-4 gap-24 py-6'>
    {songs?.map((song, index) => <Song key={index} title={song?.title} artist={song?.artist?.name}/>
 
       )}
